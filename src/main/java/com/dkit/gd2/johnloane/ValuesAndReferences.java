@@ -17,18 +17,6 @@ public class ValuesAndReferences
         System.out.println("myValue in main is " + myValue);
         testScope();
 
-        /*
-        Create a program using arrays that sorts a list of integers in descending order.
-        Descending order is highest value to lowest.
-        [1,2,3,4,5] -> [5,4,3,2,1]
-        Set up the program so that the numbers are read in from the keyboard.
-        Implement the following methods - getIntegers, printArray and sortIntegers
-        getIntegers returns an array of integers entered via the keyboard
-        printArray prints the contents of an array
-        sortIntegers will sort the array and return a new array with the sorted values
-        You will need to figure out how to copy the array elements from the passed array to the new array, sort them and return the new sorted array
-         */
-
 
 
     }
