@@ -46,9 +46,85 @@ public class MobileMain
         }
     }
 
+    private static void turnOnPhone()
+    {
+        System.out.println("Turning on the phone");
+    }
+
+    private static void printActions()
+    {
+        System.out.println("Available actions : \n press");
+        System.out.println("0 - to shutdown\n" +
+                            "1 - to print contacts\n"+
+                            "2 - to add new contacts\n"+
+                            "3 - to update existing contact\n"+
+                            "4 - to remove contacts\n"+
+                            "5 - to query if contact exists\n"+
+                            "6 - to print options\n"
+        );
+        System.out.println("Choose your action: ");
+    }
+
+
+
+    private static void queryContact()
+    {
+        System.out.println("Enter existing contact name: ");
+        String name = keyboard.nextLine();
+        Contact existingContactRecord = mobilePhone.queryContact(name);
+        if(existingContactRecord == null)
+        {
+            System.out.println("Contact not found");
+            return;
+        }
+        System.out.println("Name: " + existingContactRecord.getName() + " phone number is " + existingContactRecord.getPhoneNumber());
+    }
+
+    private static void removeContact()
+    {
+        System.out.println("Enter existing contact name: ");
+        String name = keyboard.nextLine();
+        Contact existingContactRecord = mobilePhone.queryContact(name);
+        if(existingContactRecord == null)
+        {
+            System.out.println("Contact not found");
+            return;
+        }
+        if(mobilePhone.removeContact(existingContactRecord))
+        {
+            System.out.println("Successfully deleted");
+        }
+        else
+        {
+            System.out.println("Error deleting the contact");
+        }
+    }
+
     private static void updateContact()
     {
-
+        System.out.println("Enter existing contact name: ");
+        String name = keyboard.nextLine();
+        Contact existingContact = mobilePhone.queryContact(name);
+        if(existingContact == null)
+        {
+            System.out.println("Contact was not found");
+            return;
+        }
+        System.out.println("Enter new contact name: ");
+        String newName = keyboard.nextLine();
+        System.out.println("Enter the new contact phone number: ");
+        String newNumber = keyboard.nextLine();
+        System.out.println("Enter relationship with new contact: ");
+        String newRelationship = keyboard.nextLine();
+        Contact newContact = Contact.createContact(newName, newRelationship, newNumber);
+        if(mobilePhone.updateContact(existingContact, newContact))
+        {
+            System.out.println("Successfully updated");
+        }
+        else
+        {
+            System.out.println("Error updating the record");
+        }
     }
 
     private static void addNewContact()
@@ -59,7 +135,7 @@ public class MobileMain
         String phoneNumber = keyboard.nextLine();
         System.out.println("Enter relationship: ");
         String relationship = keyboard.nextLine();
-        Contact newContact = Contact.createContact(name, phoneNumber, relationship);
+        Contact newContact = Contact.createContact(name, relationship, phoneNumber);
         if(mobilePhone.addNewContact(newContact))
         {
             System.out.println("New contact added: name =" + name + " ,phone = " + phoneNumber);
@@ -69,5 +145,6 @@ public class MobileMain
             System.out.println("Cannot add " + name + " already exists");
         }
     }
+
 
 }
