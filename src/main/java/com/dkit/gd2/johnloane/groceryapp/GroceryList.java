@@ -1,4 +1,4 @@
-package com.dkit.gd2.johnloane;
+package com.dkit.gd2.johnloane.groceryapp;
 
 import java.util.ArrayList;
 

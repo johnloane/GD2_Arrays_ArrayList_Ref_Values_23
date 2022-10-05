@@ -1,4 +1,6 @@
-package com.dkit.gd2.johnloane;
+package com.dkit.gd2.johnloane.groceryapp;
+
+import com.dkit.gd2.johnloane.groceryapp.GroceryList;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
