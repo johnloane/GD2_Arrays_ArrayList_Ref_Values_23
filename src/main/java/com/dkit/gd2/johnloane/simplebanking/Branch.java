@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Branch
 {
     private String name;
-    private Array<Customer> customers;
+    private ArrayList<Customer> customers;
 
     public Branch(String name)
     {
