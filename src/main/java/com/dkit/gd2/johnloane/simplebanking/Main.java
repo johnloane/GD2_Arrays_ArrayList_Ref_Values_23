@@ -21,5 +21,23 @@ public class Main
         Add data validations - check if exists of not exists
         Think about where you are adding the code to perform each action
          */
+
+        Bank boi = new Bank("BOI");
+        if(boi.addBranch("BOID"))
+        {
+            System.out.println("Added BOID");
+        }
+
+        boi.addCustomer("BOID", "Craig", 100000);
+        boi.addCustomer("BOID", "Muhammad", 10);
+        boi.addCustomer("BOID", "Dylan", 100);
+
+        boi.addCustomerTransaction("BOID", "Craig", 44.44);
+        boi.addCustomerTransaction("BOID", "Craig", 99.99);
+
+        boi.listCustomers("BOID", true);
+
+
+
     }
 }
