@@ -8,7 +8,18 @@ public class Main
     {
         //testCar();
         //testAccount();
-        testVIP();
+        //testVIP();
+        testAnimals();
+    }
+
+    private static void testAnimals()
+    {
+        ArrayList<String> colours = new ArrayList<>();
+        colours.add("White");
+        colours.add("Orange");
+
+        Dog missy = new Dog("Missy", colours, false, 20, 15.6, 13, "Dog", "Unknown", false, true, true, true);
+        missy.eat();
     }
 
     private static void testVIP()
