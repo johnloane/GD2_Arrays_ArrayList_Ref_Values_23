@@ -27,4 +27,16 @@ public class PC
     {
         return motherboard;
     }
+
+    public void powerUp()
+    {
+        this.pcCase.pressPowerButton();
+        drawLogo();
+    }
+
+    private void drawLogo()
+    {
+        //Graphics
+        this.monitor.drawPixelAt(1200, 50, "yellow");
+    }
 }
