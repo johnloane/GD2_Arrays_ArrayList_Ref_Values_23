@@ -4,7 +4,7 @@ public class Main
 {
     public static void main(String[] args)
     {
-        testPlayers();
+        //testPlayers();
         /*
         Create a class that demonstrate proper encapsulation
         The class will be called Printer and will simulate a Computer Printer
@@ -13,6 +13,19 @@ public class Main
         Add methods to fill up the toner up to a max of 100%, another method
         to simulate page printing which should increase the number of pages printed
          */
+
+        testPrinter();
+
+    }
+
+    private static void testPrinter()
+    {
+        Printer printer = new Printer(50, false);
+        System.out.println("Initial page count = " + printer.getPagesPrinted());
+        int pagesPrinted = printer.printPages(4);
+        System.out.println("Pages printed was " + pagesPrinted + " new total after printing is " + printer.getPagesPrinted());
+        pagesPrinted = printer.printPages(2);
+        System.out.println("Pages printed was " + pagesPrinted + " new total after printing is " + printer.getPagesPrinted());
 
     }
 
