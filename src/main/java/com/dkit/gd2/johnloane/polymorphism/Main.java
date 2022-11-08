@@ -5,6 +5,7 @@ public class Main
     public static void main(String[] args)
     {
         chooseTenRandomMovies();
+        testCars();
         //Create a base class called car
         //A car should have engine, cylinders, wheels etc
         //Constructor should initialize the number of cylinders, set wheels to 4
@@ -14,6 +15,12 @@ public class Main
         //Show a message for each of these methods in the base class
         //Create 3 subclasses for your favourite cars
         //Override the appropriate methods to demonstrate polymorphism
+    }
+
+    private static void testCars()
+    {
+        Car mitsubishi = new Mitsubishi(4, "Outlander");
+        System.out.println(mitsubishi.startEngine());
     }
 
     private static void chooseTenRandomMovies()
