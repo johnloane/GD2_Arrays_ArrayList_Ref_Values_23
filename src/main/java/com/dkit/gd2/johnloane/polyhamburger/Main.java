@@ -12,10 +12,27 @@ public class Main
     Create a Hamburger class to deal with all of the above.
     The constructor should only include the roll type, meat and price, can also include the name of the burger
     Also create two other types of Hamburger (subclasses) to cater for
-    a) Healthy burger (on a brown rye bread roll), plus two additonal items
+    a) Healthy burger (on a brown rye bread roll), plus two additional items
     The healthy burger can have 6 additional items in total
     b) Deluxe burger - comes with chips and drinks as additions, but other extra additions are allowed. You have to find a way to automatically add these additions when the deluxe burger is being constructed and prevent other additions
     All 3 classes should have a method that can be called at any time to show the base price of the hamburger, plus all additions, each showing the addition name and addition price and a final total price (hamburger plus all of the additions)
     For the two child classes you will have to look at the base class for pricing and then adding totals to final price
      */
+    public static void main(String[] args)
+    {
+        testHamburger();
+    }
+
+    private static void testHamburger()
+    {
+        Hamburger basic = new Hamburger("Basic", "Beef", 4.55, "White");
+        double price = basic.itemiseHamburger();
+        basic.addTopping(new ExtraTopping("Tomatoe", 0.20));
+        basic.addTopping(new ExtraTopping("Lettuce", 0.20));
+        basic.addTopping(new ExtraTopping("Cheese", 0.50));
+        basic.addTopping(new ExtraTopping("Bacon", 1.00));
+        basic.addTopping(new ExtraTopping("Onions", 0.20));
+        System.out.println("The total burger price is: €" + basic.itemiseHamburger());
+    }
+
 }
