@@ -21,6 +21,36 @@ public class Main
     public static void main(String[] args)
     {
         testHamburger();
+        testHealthHamburger();
+        testDeluxeHamburger();
+        issue();
+    }
+
+    private static void issue()
+    {
+        DeluxeBurger db = new DeluxeBurger();
+    }
+
+    private static void testDeluxeHamburger()
+    {
+        Hamburger db = new DeluxeBurger();
+        db.addTopping(new ExtraTopping("Cheese", 0.5));
+        db.itemiseHamburger();
+    }
+
+    private static void testHealthHamburger()
+    {
+        HealthBurger healthyBurger = new HealthBurger("Chicken", 6.50);
+        double price = healthyBurger.itemiseHamburger();
+        healthyBurger.addTopping(new ExtraTopping("Tomatoe", 0.20));
+        healthyBurger.addTopping(new ExtraTopping("Lettuce", 0.20));
+        healthyBurger.addTopping(new ExtraTopping("Cheese", 0.50));
+        healthyBurger.addTopping(new ExtraTopping("Bacon", 1.00));
+        healthyBurger.addTopping(new ExtraTopping("Onions", 0.20));
+        healthyBurger.addTopping(new ExtraTopping("Pickles", 0.20));
+        healthyBurger.addTopping(new ExtraTopping("Mushrooms", 0.20));
+        System.out.printf("The total burger price is: €%.2f", healthyBurger.itemiseHamburger());
+        System.out.println();
     }
 
     private static void testHamburger()

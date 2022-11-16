@@ -9,7 +9,7 @@ public class Hamburger
     private double price;
     private String breadRollType;
     //There are a max of 4 extra toppings here
-    private ArrayList<ExtraTopping> extraToppings;
+    protected ArrayList<ExtraTopping> extraToppings;
 
     public Hamburger(String name, String meat, double price, String breadRollType)
     {
@@ -35,7 +35,8 @@ public class Hamburger
     public double itemiseHamburger()
     {
         double hamburgerPrice = this.price;
-        System.out.println(this.name + " hamburger " + "is on a " + this.breadRollType + " roll " + "with " + this.meat + ", price is €" + this.price);
+        System.out.printf("%s hamburger is on a %s roll with %s, price is € %.2f", this.name, this.breadRollType, this.meat, this.price);
+        System.out.println();
         if(this.extraToppings.size() > 0)
         {
             for(ExtraTopping topping : this.extraToppings)
@@ -46,6 +47,27 @@ public class Hamburger
             System.out.println();
         }
         return hamburgerPrice;
+    }
+
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public String getMeat()
+    {
+        return meat;
+    }
+
+    public double getPrice()
+    {
+        return price;
+    }
+
+    public String getBreadRollType()
+    {
+        return breadRollType;
     }
 
     @Override
