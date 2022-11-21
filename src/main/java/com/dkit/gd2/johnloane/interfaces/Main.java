@@ -1,6 +1,8 @@
 package com.dkit.gd2.johnloane.interfaces;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main
@@ -15,8 +17,62 @@ public class Main
          */
         /* Add a Monster class - name, hitpoints, strength and should be saved and loaded, add toString(), test the Monster class in main....
          */
-        testISaveable();
+        //testISaveable();
+        testScreen();
 
+    }
+
+    private static void testScreen()
+    {
+        Screen screenOne = new Screen("Screen One", 8, 15 );
+
+        if(screenOne.reserveSeat("D12"))
+        {
+            System.out.println("Please pay for D12");
+        }
+        else
+        {
+            System.out.println("The seat is already reserved");
+        }
+
+        if(screenOne.reserveSeat("D12"))
+        {
+            System.out.println("Please pay for D12");
+        }
+        else
+        {
+            System.out.println("The seat is already reserved");
+        }
+
+        if(screenOne.reserveSeat("Z12"))
+        {
+            System.out.println("Please pay for Z12");
+        }
+        else
+        {
+            System.out.println("The seat is already reserved");
+        }
+
+        printList(screenOne.getSeats());
+
+        List<Seat> reverseSeats = new ArrayList<>(screenOne.getSeats());
+        Collections.reverse(reverseSeats);
+        printList(reverseSeats);
+
+        List<Seat> priceSeats = new ArrayList<>(screenOne.getSeats());
+        Collections.sort(priceSeats, new SeatPriceComparator());
+        printList(priceSeats);
+
+    }
+
+    private static void printList(List<Seat> seats)
+    {
+        for(Seat seat : seats)
+        {
+            System.out.print(" " + seat.getSeatNumber() + " €" + seat.getPrice());
+        }
+        System.out.println();
+        System.out.println("=================================");
     }
 
     private static void testISaveable()
