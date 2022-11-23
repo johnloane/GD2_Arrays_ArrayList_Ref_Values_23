@@ -89,17 +89,17 @@ public class Locations implements Map<Integer, Location>
         }
 
         //Now read the exits
-        try
-        {
-            filereader = new Scanner(new BufferedReader(new FileReader("directions.txt")));
-            filereader.useDelimiter(",");
-            while(filereader.hasNextLine())
-            {
-                String input = filereader.nextLine();
-                String[] data = input.split(",");
-                int loc = Integer.parseInt(data[0]);
-            }
-        }
+//        try
+//        {
+//            filereader = new Scanner(new BufferedReader(new FileReader("directions.txt")));
+//            filereader.useDelimiter(",");
+//            while(filereader.hasNextLine())
+//            {
+//                String input = filereader.nextLine();
+//                String[] data = input.split(",");
+//                int loc = Integer.parseInt(data[0]);
+//            }
+//        }
 
 //        Map<String, Integer> tempExit = new HashMap<>();
 //        tempExit.put("W", 1);
